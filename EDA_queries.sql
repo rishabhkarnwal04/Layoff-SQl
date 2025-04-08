@@ -85,9 +85,7 @@ where  year(`date`) is not null
 group by company,year(`date`)
 order by 2, 3 desc;
 
--- Now we create a CTE for further querying the above query 
-
--- In this CTE we assign the ranks to the company's laidoffs as per year and then further more filter using 'where' clause 
+-- Create CTE and in this CTE we assign the ranks to the company's laidoffs as per year and then further more filter using 'where' clause 
 
 with ranking_ as 
 (select company, year(`date`) as year_,sum(total_laid_off) as total_laidoff
